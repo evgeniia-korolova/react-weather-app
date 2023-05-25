@@ -4,10 +4,8 @@ import './Weather.css';
 import axios from 'axios';
 
 export default function Weather(props) {
-
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
-  const [ready, setReady] = useState(false);
 
   function handleResponse(response) {
     setWeatherData({
@@ -21,7 +19,11 @@ export default function Weather(props) {
       humidity: response.data.temperature.humidity,
       iconUrl: response.data.condition.icon_url,
     });
-    
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
   }
 
   function search() {
@@ -30,13 +32,8 @@ export default function Weather(props) {
     axios.get(apiUrl).then(handleResponse);
   }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-  }
-
   function handleCityChange(event) {
     setCity(event.target.value);
-    search();
   }
 
   if (weatherData.ready) {
@@ -62,7 +59,7 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-        <WeatherInfo info={weatherData} />
+        <WeatherInfo data={weatherData} />
       </div>
     );
   } else {
