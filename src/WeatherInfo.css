@@ -1,0 +1,27 @@
+.WeatherInfo h1{
+    margin: 0;
+    padding: 0 20px;
+}
+
+.WeatherInfo h1 {
+  font-size: 32px;
+  margin: 20px 0 0 0;
+  padding: 0 40px;
+}
+
+.WeatherInfo ul {
+  margin: 0;
+  padding: 0 20px;  
+}
+
+.WeatherInfo li {
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 100;
+  list-style: none; 
+  text-transform: capitalize;
+}
+
+.WeatherInfo .description {
+padding: 0 20px;
+}

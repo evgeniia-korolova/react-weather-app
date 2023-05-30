@@ -3,6 +3,8 @@ import WeatherInfo from './WeatherInfo';
 import WeatherForecast from './WeatherForecast';
 import './Weather.css';
 import axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -55,7 +57,7 @@ export default function Weather(props) {
       <div className="Weather">
         <form onSubmit={handleSubmit}>
           <div className="row">
-            <div className="col-6">
+            <div className="col-7">
               <input
                 type="search"
                 placeholder="Enter a city..."
@@ -71,18 +73,18 @@ export default function Weather(props) {
                 className="btn btn-primary w-100"
               />
             </div>
-            <div className="col-3">
-              <input
-                type="submit"
-                value="Location"
-                className="btn btn-primary w-100"
-                onClick={geoLocation}
-              />
+            <div className="col-2">
+              <button
+                type="submit"  className="btn btn-primary
+                w-100" onClick={geoLocation}
+              >
+                <FontAwesomeIcon icon={faLocationDot} />
+              </button>
             </div>
           </div>
         </form>
         <WeatherInfo data={weatherData} />
-        <WeatherForecast coordinates={weatherData.coordinates } />
+        <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {

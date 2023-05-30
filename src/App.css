@@ -1,10 +1,18 @@
 .App {
-   max-width: 70%;
+   max-width: 60%;
    margin: 30px auto;
+   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+}
+
+body {
+ background-image: url('/src/images/nebo_oblaka_rozovyj.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .App footer {
   font-size: 11px;
   margin: 10px 0;
+  text-align: center;
 }
 
