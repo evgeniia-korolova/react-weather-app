@@ -1,17 +1,30 @@
 .Weather {
-  background: rgb(239, 165, 189);
-  border: 1px solid rgb(65, 2, 2);
-  border-radius: 10px;
+  background: linear-gradient(149deg, rgb(99, 246, 219) 0%, rgb(114, 144, 251) 42%, rgb(244, 99, 125) 72%, rgb(233, 37, 80) 100%);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  border: 1px solid rgb(69, 5, 12);
+  border-radius: 20px;
+  box-shadow: 0 0px 15px rgb(103, 6, 6);
   font-family: Arial, Helvetica, sans-serif;
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   padding: 40px;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .Weather form {
   margin-bottom: 20px;
 }
-
-
 
 .Weather img {
   vertical-align: bottom;
