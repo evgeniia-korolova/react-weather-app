@@ -14,11 +14,11 @@ export default function WeatherInfo(props) {
         <li className='description'>{props.data.description}</li>
       </ul>
       <div className="row mt-3">
-        <div className="col-6 px-5">
+        <div className="col-7 px-5">
           <img src={props.data.iconUrl} alt={props.data.description} />{' '}
           <WeatherTemperature celsius={props.data.temperature} />
         </div>
-        <div className="col-6 px-5">
+        <div className="col-5 px-5">
           <ul>
             <li>Feels like : {Math.round(props.data.feelsLike)}°C</li>
             <li>Humidity: {props.data.humidity}%</li>

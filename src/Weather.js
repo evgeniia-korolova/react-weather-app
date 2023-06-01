@@ -27,13 +27,17 @@ export default function Weather(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    search();
+    
+      search();
+    
   }
 
   function search() {
     const apiKey = '82903b2bbd2tcf4oe06f2aa9495a97b0';
     const apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
-    axios.get(apiUrl).then(handleResponse);
+    axios.get(apiUrl).then(handleResponse).catch((error) => {
+        alert("Enter a valid city!");
+      });;
   }
 
   function handleCityChange(event) {
